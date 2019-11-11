@@ -2,11 +2,11 @@
 
 # GithubSdk
 
-To use the SDK,you can download and import **[githubsdk.aar](https://drive.google.com/open?id=1knSQn-g-GByqLtw-WuecG5o8BCDYkkqT)** file in any application. You need to create an object of **GithubRepository**. Its constructor takes two parameters, first one is the instance of **SearchGithubRepositoryNetworkEndPoint** and second is an instance of GithubSdkListener.
+To use the SDK,you can download and import **[githubsdk.aar](https://drive.google.com/open?id=1knSQn-g-GByqLtw-WuecG5o8BCDYkkqT)** file in any application. You need to create an object of **GithubRepository**. Its constructor takes two parameters, first one is the instance of **SearchGithubRepositoryNetworkEndPoint** and second is an instance of **GithubSdkListener**.
 
     githubRepository = GithubRepository(getSearchGithubRepositoryNetworkEndPoint(), this@MainActivity);
 
-Then you have to call the searchForGithubRepository function and pass platform and organization as a parameter.
+Then you have to call the searchForGithubRepository function and pass names of *platform* and *organization* as a parameter.
 
     githubRepository.searchForGithubRepository("android", “rakutentech");
 
@@ -17,7 +17,7 @@ Currently, it uses AsyncTask and HttpUrlConnection to make HTTP request and get 
 
 There is a parsing class **SearchGithubRepositoryEndpointParser** used in Asynctask to parse the string response into the appropriate schema and returns a list of **GithubRepositorySchema (List<GithubRepositorySchema>)**;
     
-**SearchGithubRepositoryEndpointParserTest.java has the unit test cases for the parsing class.**
+**SearchGithubRepositoryEndpointParserTest.java has the unit tests for the parsing class.**
 
 SearchGithubRepositoryEndpointParser where it test for various cases. Here are the function, whose names are self explanatory
 
