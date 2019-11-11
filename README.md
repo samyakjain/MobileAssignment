@@ -4,9 +4,11 @@
 
 To use the SDK,you can download and import **[githubsdk.aar](https://drive.google.com/open?id=1knSQn-g-GByqLtw-WuecG5o8BCDYkkqT)** file in any application. You need to create an object of **GithubRepository**. Its constructor takes two parameters, first one is the instance of **SearchGithubRepositoryNetworkEndPoint** and second is an instance of **GithubSdkListener**.
 
-    githubRepository = GithubRepository(getSearchGithubRepositoryNetworkEndPoint(), this@MainActivity);
+    githubRepository = GithubRepository(SearchGithubRepositoryNetworkEndPoint(), this@MainActivity);
 
-Then you have to call the searchForGithubRepository function and pass names of *platform* and *organization* as a parameter.
+I have made SearchGithubRepositoryNetworkEndPoint as a dependency because if somebody's want to provide their own implementation, then they can just extend SearchGithubRepositoryNetworkEndPoint. 
+
+After that, you have to call the searchForGithubRepository function and pass names of *platform* and *organization* as a parameter.
 
     githubRepository.searchForGithubRepository("android", “rakutentech");
 
