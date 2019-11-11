@@ -1,0 +1,2 @@
+include ':app', ':githubsdk'
+rootProject.name='Mobile Assignment'
